@@ -10,14 +10,7 @@
 </head>
 <body>
 <header>
-  <h1>Witaj na mojej stronie</h1>
-  <nav>
-    <ul>
-      <li><a href="#">Strona główna</a></li>
-      <li><a href="#">O mnie</a></li>
-      <li><a href="#">Kontakt</a></li>
-    </ul>
-  </nav>
+
   <mat-toolbar color="primary">
     <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
       <mat-icon>menu</mat-icon>
@@ -46,7 +39,31 @@
 </main>
 
 <footer>
-  <p>&copy; 2023 Moja Strona</p>
+  <div class="footer-container">
+    <div class="footer-left">
+      <p>&copy; 2023 Moja Strona</p>
+    </div>
+    <div class="footer-right">
+      <table class="footer-table">
+        <tr>
+
+          <td>
+            <ul class="social-media-icons" >
+              <li><a href="https://www.facebook.com/"> Facebook </a><mat-icon>facebook</mat-icon></li>
+              <li><a href="https://www.twitter.com/"> Likes </a><mat-icon>thumb_up</mat-icon></li>
+              <li><a href="https://www.instagram.com/"> User </a><mat-icon>verified_user</mat-icon></li>
+            </ul>
+          </td>
+          <td style="width: 40%; text-align: left">
+            <b>Lorem ipsum</b><br><br>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam rutrum fermentum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque tristique neque lectus, in semper arcu cursus in.
+          </td>
+        </tr>
+      </table>
+
+
+    </div>
+  </div>
 </footer>
 </body>
 </html>
