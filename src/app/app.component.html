@@ -3,50 +3,77 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mój Dokument HTML</title>
-  <style>
-    /* Dodaj tutaj swoje style CSS, jeśli są potrzebne */
-  </style>
+  <title>{{ title }}</title>
 </head>
 <body>
 <header>
 
   <mat-toolbar color="primary">
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" [matMenuTriggerFor]="menu">
       <mat-icon>menu</mat-icon>
     </button>
-    <span>My App</span>
+    Your Forecast
     <span class="example-spacer"></span>
-    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-      <mat-icon>favorite</mat-icon>
-    </button>
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-      <mat-icon>share</mat-icon>
-    </button>
+
   </mat-toolbar>
+
+  <mat-menu #menu="matMenu" xPosition="before">
+    <button mat-menu-item>Super Opcja 1</button>
+    <button mat-menu-item>Super Opcja 2</button>
+    <button mat-menu-item>Super Opcja 3</button>
+  </mat-menu>
+
+
 </header>
 
 <main>
   <section>
-    <h2>O mnie</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tristique felis eu orci vestibulum, at consectetur ex posuere. Proin vel aliquet metus. Sed auctor libero euismod enim fermentum, id vulputate nisi tempor.</p>
+    <h1>Aktualna pogoda <mat-icon [inline]="true" class="my-custom-icon-class">today</mat-icon></h1>
+    <table class="table-of-forecast">
+      <tr>
+        <td>temperatura</td>
+        <td>19 C</td>
+      </tr>
+      <tr>
+        <td>ciśnienie</td>
+        <td>1010 hPa</td>
+      </tr>
+      <tr>
+        <td>wiatr</td>
+        <td>32 km/h</td>
+      </tr>
+      <tr>
+        <td>odczuwalna temperatura</td>
+        <td>14°C</td>
+      </tr>
+      <tr>
+        <td>lokalizacja</td>
+        <td id="location">{{ locationMessage }}</td>
+      </tr>
+    </table>
   </section>
-
   <section>
-    <h2>Kontakt</h2>
-    <p>Skontaktuj się ze mną poprzez <a href="mailto:kontakt@example.com">e-mail</a> lub odwiedź mnie na <a href="https://www.example.com">mojej stronie internetowej</a>.</p>
+    <h1>Pogoda jutro <mat-icon [inline]="true" class="my-custom-icon-class">timeline</mat-icon></h1>
+    <app-forecasttable></app-forecasttable>
+  </section>
+  <section>
+    <h1>Pogoda następnego dnia <mat-icon [inline]="true" class="my-custom-icon-class">timeline</mat-icon></h1>
+    <app-forecasttable></app-forecasttable>
+  </section>
+  <section>
+    <h1>Pogoda pojutrze <mat-icon [inline]="true" class="my-custom-icon-class">timeline</mat-icon></h1>
+    <app-forecasttable></app-forecasttable>
   </section>
 </main>
 
 <footer>
   <div class="footer-container">
     <div class="footer-left">
-      <p>&copy; 2023 Moja Strona</p>
+      <p>&copy; 2023 Projekt na zaliczenie</p>
     </div>
     <div class="footer-right">
       <table class="footer-table">
         <tr>
-
           <td>
             <ul class="social-media-icons" >
               <li><a href="https://www.facebook.com/"> Facebook </a><mat-icon>facebook</mat-icon></li>
@@ -60,8 +87,6 @@
           </td>
         </tr>
       </table>
-
-
     </div>
   </div>
 </footer>
