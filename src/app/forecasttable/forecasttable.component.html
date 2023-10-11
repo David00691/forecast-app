@@ -1,0 +1,44 @@
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+  <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+  <!-- Position Column -->
+  <ng-container matColumnDef="a">
+    <th mat-header-cell *matHeaderCellDef> Nr. </th>
+    <td mat-cell *matCellDef="let element"> {{element.a}} </td>
+  </ng-container>
+
+  <!-- Time Column -->
+  <ng-container matColumnDef="b">
+    <th mat-header-cell *matHeaderCellDef> Czas </th>
+    <td mat-cell *matCellDef="let element"> {{element.b}} </td>
+  </ng-container>
+
+  <!-- Temperature Column -->
+  <ng-container matColumnDef="c">
+    <th mat-header-cell *matHeaderCellDef> Temperatura (°C) </th>
+    <td mat-cell *matCellDef="let element"> {{element.c}} </td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="d">
+    <th mat-header-cell *matHeaderCellDef> Ciśnienie (Pa)  </th>
+    <td mat-cell *matCellDef="let element"> {{element.d}} </td>
+  </ng-container>
+
+  <!-- Feels Like Temperature Column -->
+  <ng-container matColumnDef="e">
+    <th mat-header-cell *matHeaderCellDef> Wiatr (km/h) </th>
+    <td mat-cell *matCellDef="let element"> {{element.e}} </td>
+  </ng-container>
+
+  <!-- Feels Like Temperature Column -->
+  <ng-container matColumnDef="f">
+    <th mat-header-cell *matHeaderCellDef> Odczuwalna temperatura (°C) </th>
+    <td mat-cell *matCellDef="let element"> {{element.f}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
